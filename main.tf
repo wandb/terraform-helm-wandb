@@ -14,11 +14,12 @@ resource "helm_release" "operator" {
 }
 
 resource "helm_release" "wandb" {
-  name       = "wandb"
-  chart      = "operator"
-  repository = path.module
+  name  = "wandb"
+  chart = "operator"
 
-  namespace        = var.wandb_namespace
+  repository = path.module
+  namespace  = var.wandb_namespace
+
   create_namespace = true
   wait             = true
 
