@@ -13,8 +13,6 @@ variable "instance" {
   default = {
     version   = "0.1.6"
     namespace = "default"
-    #fqdn           = "" # You may want to set a default value here
-    #cloud          = "" # You may want to set a default value here
   }
   validation {
     condition     = can(regex("^(google|aws|azure)$", var.instance.cloud))
