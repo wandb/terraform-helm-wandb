@@ -31,7 +31,7 @@ variable "operator_namespace" {
 
 variable "operator_image_tag" {
   type        = string
-  default     = "1.2.12"
+  default     = "1.2.13"
   description = "wandb/controller image tag"
 }
 
