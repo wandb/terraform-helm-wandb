@@ -17,8 +17,8 @@ variable "instance" {
     #cloud          = "" # You may want to set a default value here
   }
   validation {
-    condition     = can(regex("^(gcp|aws|azure)$", var.instance.cloud))
-    error_message = "The cloud provider must be one of gcp, aws, or azure."
+    condition     = can(regex("^(google|aws|azure)$", var.instance.cloud))
+    error_message = "The cloud provider must be one of google, aws, or azure."
   }
   description = "Configuration for the instance, including version, namespace, FQDN of the wandb server, and cloud provider."
 }
