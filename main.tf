@@ -17,6 +17,8 @@ resource "helm_release" "wandb" {
   name  = "wandb"
   chart = "operator"
 
+  force_update = true
+
   repository = path.module
   namespace  = var.wandb_namespace
 
