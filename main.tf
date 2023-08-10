@@ -2,43 +2,39 @@ resource "helm_release" "operator" {
   name             = "operator"
   chart            = "operator"
   repository       = "https://charts.wandb.ai"
-  version          = var.operator.operator_version
-  namespace        = var.operator.namespace
+  version          = var.operator_version
+  namespace        = var.operator_namespace
   create_namespace = true
   wait             = true
 
   set {
     name  = "image.tag"
-    value = var.operator.image_tag
+    value = var.operator_image_tag
   }
 }
 
-locals {
-  spec = yamlencode(var.spec)
-}
-
-resource "helm_release" "instance" {
+resource "helm_release" "wandb" {
   name       = "wandb"
   chart      = "operator"
   repository = path.module
 
-  namespace        = var.instance.namespace
+  namespace        = var.wandb_namespace
   create_namespace = true
   wait             = true
 
   set {
     name  = "domain"
-    value = var.instance.fqdn
+    value = var.wandb_fqdn
   }
 
   set {
     name  = "cloud"
-    value = var.instance.cloud
+    value = var.wandb_cloud
   }
 
   set {
     name  = "spec"
-    value = local.spec
+    value = yamlencode(var.spec)
     type  = "string"
   }
 
