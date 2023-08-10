@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.0.1](https://github.com/wandb/terraform-helm-wandb/compare/v1.0.0...v1.0.1) (2023-08-10)
+
+
+### Bug Fixes
+
+* Bump tag ([ea911b7](https://github.com/wandb/terraform-helm-wandb/commit/ea911b7bc703caae307babd454cda18ac267d33e))
+
 ## 1.0.0 (2023-08-10)
 
 
