@@ -2,14 +2,14 @@ resource "helm_release" "operator" {
   name             = "operator"
   chart            = "operator"
   repository       = "https://charts.wandb.ai"
-  version          = var.operator_version
-  namespace        = var.operator_namespace
+  version          = var.operator.operator_version
+  namespace        = var.operator.namespace
   create_namespace = true
   wait             = true
 
   set {
     name  = "image.tag"
-    value = var.operator_image_tag
+    value = var.operator.image_tag
   }
 }
 
@@ -22,18 +22,18 @@ resource "helm_release" "instance" {
   chart      = "operator"
   repository = path.module
 
-  namespace        = var.instance_namespace
+  namespace        = var.instance.namespace
   create_namespace = true
   wait             = true
 
   set {
     name  = "domain"
-    value = var.fqdn
+    value = var.instance.fqdn
   }
 
   set {
     name  = "cloud"
-    value = var.instance_cloud
+    value = var.instance.cloud
   }
 
   set {
