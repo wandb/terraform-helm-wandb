@@ -23,20 +23,21 @@ variable "wandb_cloud" {
   description = "The cloud provider to use."
 }
 
+variable "controler_image_tag" {
+  type        = string
+  default     = "1.9.0"
+  description = "wandb/controller image tag"
+}
+
 variable "operator_namespace" {
   type        = string
   default     = "wandb"
   description = "Kubernetes namespace where the operator CRD's will be deployed. By default, it uses the `default` namespace."
 }
 
-variable "operator_image_tag" {
-  type        = string
-  default     = "1.2.13"
-  description = "wandb/controller image tag"
-}
 
 variable "operator_version" {
   type        = string
-  default     = "0.1.6"
+  default     = "0.2.0"
   description = "https://github.com/wandb/helm-charts/tree/main/charts/operator helm chart version"
 }
