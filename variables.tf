@@ -31,12 +31,12 @@ variable "operator_namespace" {
 
 variable "operator_image_tag" {
   type        = string
-  default     = "1.2.13"
+  default     = "1.3.0"
   description = "wandb/controller image tag"
 }
 
 variable "operator_version" {
   type        = string
-  default     = "0.1.6"
+  default     = "0.2.0"
   description = "https://github.com/wandb/helm-charts/tree/main/charts/operator helm chart version"
 }
