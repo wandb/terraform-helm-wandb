@@ -35,7 +35,6 @@ variable "operator_namespace" {
   description = "Kubernetes namespace where the operator CRD's will be deployed. By default, it uses the `default` namespace."
 }
 
-
 variable "operator_version" {
   type        = string
   default     = "0.2.0"
