@@ -9,7 +9,7 @@ resource "helm_release" "operator" {
 
   set {
     name  = "image.tag"
-    value = var.operator_image_tag
+    value = var.controler_image_tag
   }
 }
 
