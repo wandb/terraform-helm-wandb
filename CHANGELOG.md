@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.1.2](https://github.com/wandb/terraform-helm-wandb/compare/v1.1.1...v1.1.2) (2023-08-22)
+
+
+### Bug Fixes
+
+* Correct formating in subchart ([2580ed3](https://github.com/wandb/terraform-helm-wandb/commit/2580ed3367f6be57a5f6bf419fee0ec977b42bd5))
+* Fix formatting ([18b28f7](https://github.com/wandb/terraform-helm-wandb/commit/18b28f78c0dadb260a1579aee71059da632f05e9))
+
 ### [1.1.1](https://github.com/wandb/terraform-helm-wandb/compare/v1.1.0...v1.1.1) (2023-08-22)
 
 
