@@ -25,7 +25,7 @@ variable "wandb_cloud" {
 
 variable "controler_image_tag" {
   type        = string
-  default     = "1.9.0"
+  default     = "latest"
   description = "wandb/controller image tag"
 }
 
@@ -37,6 +37,6 @@ variable "operator_namespace" {
 
 variable "operator_version" {
   type        = string
-  default     = "0.2.0"
+  default     = "latest"
   description = "https://github.com/wandb/helm-charts/tree/main/charts/operator helm chart version"
 }
