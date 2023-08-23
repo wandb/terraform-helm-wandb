@@ -6,6 +6,10 @@ resource "helm_release" "operator" {
   namespace        = var.operator_namespace
   create_namespace = true
   wait             = true
+  atomic           = false
+  cleanup_on_fail  = false
+  disable_webhooks = true
+  verify           = false
 
   set {
     name  = "image.tag"
@@ -14,8 +18,8 @@ resource "helm_release" "operator" {
 }
 
 resource "helm_release" "wandb" {
-  name  = "wandb"
-  chart = "operator"
+  name  = "wandb-cr"
+  chart = "wandb-cr"
 
   force_update = true
 
@@ -24,6 +28,11 @@ resource "helm_release" "wandb" {
 
   create_namespace = true
   wait             = true
+
+  set {
+    name  = "wandbName"
+    value = "wandb"
+  }
 
   set {
     name  = "domain"
