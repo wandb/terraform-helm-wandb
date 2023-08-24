@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.1.4](https://github.com/wandb/terraform-helm-wandb/compare/v1.1.3...v1.1.4) (2023-08-24)
+
+
+### Bug Fixes
+
+* rename operator version to operator_chart_version ([d19e834](https://github.com/wandb/terraform-helm-wandb/commit/d19e834546685ea1163c005b6dfda63958ecffad))
+
 ### [1.1.3](https://github.com/wandb/terraform-helm-wandb/compare/v1.1.2...v1.1.3) (2023-08-23)
 
 
