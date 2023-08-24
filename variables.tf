@@ -23,7 +23,7 @@ variable "wandb_cloud" {
   description = "The cloud provider to use."
 }
 
-variable "controler_image_tag" {
+variable "controller_image_tag" {
   type        = string
   default     = "latest"
   description = "wandb/controller image tag"

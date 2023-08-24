@@ -2,7 +2,7 @@ resource "helm_release" "operator" {
   name             = "operator"
   chart            = "operator"
   repository       = "https://charts.wandb.ai"
-  version          = var.operator_version
+  version          = var.operator_chart_version
   namespace        = var.operator_namespace
   create_namespace = true
   wait             = true
@@ -13,7 +13,7 @@ resource "helm_release" "operator" {
 
   set {
     name  = "image.tag"
-    value = var.controler_image_tag
+    value = var.controller_image_tag
   }
 }
 
