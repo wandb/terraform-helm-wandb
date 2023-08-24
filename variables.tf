@@ -35,7 +35,7 @@ variable "operator_namespace" {
   description = "Kubernetes namespace where the operator CRD's will be deployed. By default, it uses the `default` namespace."
 }
 
-variable "operator_version" {
+variable "operator_chart_version" {
   type        = string
   default     = "latest"
   description = "https://github.com/wandb/helm-charts/tree/main/charts/operator helm chart version"
