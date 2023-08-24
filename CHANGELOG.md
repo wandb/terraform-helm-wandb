@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+### [1.1.5](https://github.com/wandb/terraform-helm-wandb/compare/v1.1.4...v1.1.5) (2023-08-24)
+
+
+### Bug Fixes
+
+* renaming controoler version tag ([5a05dd6](https://github.com/wandb/terraform-helm-wandb/commit/5a05dd62b775b21829d2d41b350a0af52dfb5aa6))
+
 ### [1.1.4](https://github.com/wandb/terraform-helm-wandb/compare/v1.1.3...v1.1.4) (2023-08-24)
 
 
