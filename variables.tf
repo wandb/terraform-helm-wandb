@@ -9,27 +9,13 @@ variable "wandb_namespace" {
   description = "Kubernetes namespace where the operator will be deployed. By default, it uses the `default` namespace."
 }
 
-variable "wandb_fqdn" {
-  type        = string
-  description = "The FQDN to the W&B application"
-}
-
-variable "wandb_cloud" {
-  type = string
-  validation {
-    condition     = can(regex("^(google|aws|azure)$", var.wandb_cloud))
-    error_message = "The cloud provider must be one of google, aws, or azure"
-  }
-  description = "The cloud provider to use."
-}
-
 variable "controller_image_tag" {
   type        = string
   default     = "latest"
   description = "wandb/controller image tag"
 }
 
-variable "operator_namespace" {
+variable "operator_chart_namespace" {
   type        = string
   default     = "wandb"
   description = "Kubernetes namespace where the operator CRD's will be deployed. By default, it uses the `default` namespace."

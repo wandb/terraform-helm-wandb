@@ -1,7 +1,8 @@
+---
 apiVersion: apps.wandb.com/v1
 kind: WeightsAndBiases
 metadata:
-  name: {{ .Values.wandbName }}
+  name: {{ .Values.name }}
   namespace: {{ .Release.Namespace }}
   labels:
     app.kubernetes.io/name: weightsandbiases

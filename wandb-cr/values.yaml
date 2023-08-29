@@ -1,4 +1,2 @@
-wandbName: "wandb"
-cloud: ""
-domain: ""
+name: "wandb"
 spec: {}

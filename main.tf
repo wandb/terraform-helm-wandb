@@ -3,7 +3,7 @@ resource "helm_release" "operator" {
   chart            = "operator"
   repository       = "https://charts.wandb.ai"
   version          = var.operator_chart_version
-  namespace        = var.operator_namespace
+  namespace        = var.operator_chart_namespace
   create_namespace = true
   wait             = true
   atomic           = false
@@ -30,18 +30,8 @@ resource "helm_release" "wandb" {
   wait             = true
 
   set {
-    name  = "wandbName"
+    name  = "name"
     value = "wandb"
-  }
-
-  set {
-    name  = "domain"
-    value = var.wandb_fqdn
-  }
-
-  set {
-    name  = "cloud"
-    value = var.wandb_cloud
   }
 
   set {
