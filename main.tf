@@ -43,5 +43,10 @@ resource "helm_release" "wandb" {
     type  = "string"
   }
 
-  depends_on = [helm_release.operator]
+  depends_on = [helm_release_operator]
+}
+
+locals {
+  helm_release_wandb = one(helm_release.wandb[*])
+  helm_release_operator = one(helm_release.operator[*])
 }
