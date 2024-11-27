@@ -22,6 +22,8 @@ resource "helm_release" "wandb" {
   name  = "wandb-cr"
   chart = "wandb-cr"
 
+  count = var.enable_helm_release ? 1 : 0
+
   force_update = true
 
   repository = path.module
