@@ -26,3 +26,9 @@ variable "operator_chart_version" {
   default     = "latest"
   description = "https://github.com/wandb/helm-charts/tree/main/charts/operator helm chart version"
 }
+
+variable "enable_helm_release" {
+  type        = boolean
+  default     = true
+  description = "Enable or disable applying and releasing Helm chart"
+}
