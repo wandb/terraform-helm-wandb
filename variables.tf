@@ -28,7 +28,7 @@ variable "operator_chart_version" {
 }
 
 variable "enable_helm_release" {
-  type        = boolean
+  type        = bool
   default     = true
   description = "Enable or disable applying and releasing Helm chart"
 }
