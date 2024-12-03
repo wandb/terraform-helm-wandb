@@ -31,11 +31,13 @@ terraform state pull > terraform.tfstate.backup.$(date +%Y%m%d-%H%M%S)
 # Migrate each resource
 echo "Migrating resources..."
 
-# Migrate the operator release
-migrate_resource "helm_release.operator" "helm_release.operator[0]"
-
-# Migrate the wandb release
-migrate_resource "helm_release.wandb" "helm_release.wandb[0]"
+# Find all helm_release resources and migrate them
+terraform state list | grep "helm_release" | while read -r resource; do
+    # Skip if resource already has count index
+    if [[ "$resource" != *"[0]"* ]]; then
+        migrate_resource "$resource" "${resource}[0]"
+    fi
+done
 
 echo "Migration completed!"
 echo "Please review the state and run 'terraform plan' to verify the migration" 
