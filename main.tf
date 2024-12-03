@@ -43,7 +43,7 @@ resource "helm_release" "wandb" {
     type  = "string"
   }
 
-  depends_on = [helm_release_operator]
+  depends_on = [local.helm_release_operator]
 }
 
 locals {
