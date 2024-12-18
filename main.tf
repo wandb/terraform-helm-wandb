@@ -47,6 +47,6 @@ resource "helm_release" "wandb" {
 }
 
 locals {
-  helm_release_wandb = one(helm_release.wandb[*])
+  helm_release_wandb    = one(helm_release.wandb[*])
   helm_release_operator = one(helm_release.operator[*])
 }
