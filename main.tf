@@ -10,6 +10,7 @@ resource "helm_release" "operator" {
   cleanup_on_fail  = false
   disable_webhooks = true
   verify           = false
+  count            = var.enable_helm_release ? 1 : 0
 
   set {
     name  = "image.tag"
@@ -20,6 +21,8 @@ resource "helm_release" "operator" {
 resource "helm_release" "wandb" {
   name  = "wandb-cr"
   chart = "wandb-cr"
+
+  count = var.enable_helm_release ? 1 : 0
 
   force_update = true
 
@@ -40,5 +43,20 @@ resource "helm_release" "wandb" {
     type  = "string"
   }
 
-  depends_on = [helm_release.operator]
+  depends_on = [local.helm_release_operator]
+}
+
+locals {
+  helm_release_wandb    = one(helm_release.wandb[*])
+  helm_release_operator = one(helm_release.operator[*])
+}
+
+moved {
+  from = helm_release.operator
+  to   = helm_release.operator[0]
+}
+
+moved {
+  from = helm_release.wandb
+  to   = helm_release.wandb[0]
 }
