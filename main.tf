@@ -10,6 +10,7 @@ resource "helm_release" "operator" {
   cleanup_on_fail  = false
   disable_webhooks = true
   verify           = false
+  // note: use count to enforce whether helm is used for release
   count            = var.enable_helm_release ? 1 : 0
 
   set {
