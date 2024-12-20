@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0](https://github.com/wandb/terraform-helm-wandb/compare/v1.3.0...v2.0.0) (2024-12-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* breaking change for enabling helm release toggle (TF > 1.9) (#6)
+
+### Features
+
+* breaking change for enabling helm release toggle (TF > 1.9) ([#6](https://github.com/wandb/terraform-helm-wandb/issues/6)) ([b922436](https://github.com/wandb/terraform-helm-wandb/commit/b9224364c980b6ae19848b9aa440373a99a33bcf))
+
 ## [1.2.0](https://github.com/wandb/terraform-helm-wandb/compare/v1.1.5...v1.2.0) (2023-08-29)
 
 
