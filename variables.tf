@@ -35,10 +35,10 @@ variable "enable_helm_release" {
 
 ## Redis
 
-variable "use_redis_in_cluster" {
+variable "create_redis_in_cluster" {
   type        = bool
   default     = false
-  description = "Enable or disable redis in cluster"
+  description = "Create redis in cluster"
 }
 
 variable "redis_service_name_prefix" {

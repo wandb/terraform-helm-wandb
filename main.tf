@@ -54,7 +54,7 @@ locals {
 
 
 resource "helm_release" "redis_in_cluster" {
-  count            = var.use_redis_in_cluster ? 1 : 0
+  count            = var.create_redis_in_cluster ? 1 : 0
   name             = var.redis_service_name_prefix
   namespace        = var.wandb_namespace
   repository       = "oci://registry-1.docker.io/bitnamicharts"
