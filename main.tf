@@ -64,6 +64,7 @@ resource "helm_release" "redis_in_cluster" {
   create_namespace = true
   wait             = true
   cleanup_on_fail  = false
+  force_update     = true
 
 
   set {
