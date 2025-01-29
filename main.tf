@@ -6,6 +6,7 @@ resource "helm_release" "operator" {
   namespace        = var.operator_chart_namespace
   create_namespace = true
   wait             = true
+  wait_for_jobs    = false
   atomic           = false
   cleanup_on_fail  = false
   disable_webhooks = true
@@ -32,6 +33,7 @@ resource "helm_release" "wandb" {
 
   create_namespace = true
   wait             = true
+  wait_for_jobs    = true
 
   set {
     name  = "name"
