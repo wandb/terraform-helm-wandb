@@ -53,57 +53,6 @@ locals {
 }
 
 
-resource "helm_release" "redis_in_cluster" {
-  count            = var.create_redis_in_cluster ? 1 : 0
-  name             = var.redis_service_name_prefix
-  namespace        = var.wandb_namespace
-  repository       = "oci://registry-1.docker.io/bitnamicharts"
-  chart            = "redis"
-  version          = var.redis_chart_version
-
-  create_namespace = true
-  wait             = true
-  cleanup_on_fail  = false
-  force_update     = true
-
-
-  set {
-    name  = "namespaceOverride"
-    value = var.wandb_namespace
-  }
-
-  set {
-    name = "sentinel.masterSet"
-    value = var.redis_master_name
-  }
-
-  set {
-    name  = "sentinel.enabled"
-    value = "true"
-  }
-
-  set {
-    name  = "metrics.enabled"
-    value = "true"
-  }
-
-  set {
-    name  = "replica.replicaCount"
-    value = 3
-  }
-
-  set {
-    name  = "auth.enabled"
-    value = "false"
-  }
-
-  set {
-    name  = "auth.sentinel"
-    value = "false"
-  }
-}
-
-
 moved {
   from = helm_release.operator
   to   = helm_release.operator[0]

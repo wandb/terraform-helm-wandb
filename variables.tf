@@ -33,28 +33,3 @@ variable "enable_helm_release" {
   description = "Enable or disable applying and releasing Helm chart"
 }
 
-## Redis
-
-variable "create_redis_in_cluster" {
-  type        = bool
-  default     = false
-  description = "Create redis in cluster"
-}
-
-variable "redis_service_name_prefix" {
-  type        = string
-  default     = null
-  description = "Prefix of the redis service name"
-}
-
-variable "redis_master_name" {
-  type        = string
-  default     = null
-  description = "Name of the redis master that sentinel uses to monitor"
-}
-
-variable "redis_chart_version" {
-  type        = string
-  default     = "20.6.1"
-  description = "Bitnami redis chart version"
-}
