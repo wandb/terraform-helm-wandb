@@ -27,8 +27,14 @@ variable "operator_chart_version" {
   description = "https://github.com/wandb/helm-charts/tree/main/charts/operator helm chart version"
 }
 
-variable "enable_helm_release" {
+variable "enable_helm_operator" {
   type        = bool
   default     = true
-  description = "Enable or disable applying and releasing Helm chart"
+  description = "Enable or disable applying and releasing W&B Operator chart"
+}
+
+variable "enable_helm_wandb" {
+  type        = bool
+  default     = true
+  description = "Enable or disable applying and releasing CR chart"
 }
