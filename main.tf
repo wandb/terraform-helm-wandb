@@ -11,7 +11,7 @@ resource "helm_release" "operator" {
   disable_webhooks = true
   verify           = false
   // note: use count to enforce whether helm is used for release
-  count            = var.enable_helm_release ? 1 : 0
+  count            = var.enable_helm_operator ? 1 : 0
 
   set {
     name  = "image.tag"
@@ -23,7 +23,7 @@ resource "helm_release" "wandb" {
   name  = "wandb-cr"
   chart = "wandb-cr"
 
-  count = var.enable_helm_release ? 1 : 0
+  count = var.enable_helm_wandb ? 1 : 0
 
   force_update = true
 
