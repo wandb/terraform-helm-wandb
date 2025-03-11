@@ -1,5 +1,7 @@
 # terraform-helm-wandb
 
+Deploys operator
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
