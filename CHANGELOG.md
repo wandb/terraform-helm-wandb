@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.0](https://github.com/wandb/terraform-helm-wandb/compare/v2.0.0...v3.0.0) (2025-03-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* add helm chart toggles
+
+### Features
+
+* add helm chart toggles ([729c9a0](https://github.com/wandb/terraform-helm-wandb/commit/729c9a001fe660cfdf46ed685cce628d42d86179))
+
 ## [2.0.0](https://github.com/wandb/terraform-helm-wandb/compare/v1.3.0...v2.0.0) (2024-12-20)
 
 
