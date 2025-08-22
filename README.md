@@ -26,6 +26,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_controller_image_repository"></a> [controller\_image\_repository](#input\_controller\_image\_repository) | wandb/controller image repository | `string` | `"wandb/controller"` | no |
 | <a name="input_controller_image_tag"></a> [controller\_image\_tag](#input\_controller\_image\_tag) | wandb/controller image tag | `string` | `"latest"` | no |
 | <a name="input_enable_helm_operator"></a> [enable\_helm\_operator](#input\_enable\_helm\_operator) | Enable or disable applying and releasing W&B Operator chart | `bool` | `true` | no |
 | <a name="input_enable_helm_wandb"></a> [enable\_helm\_wandb](#input\_enable\_helm\_wandb) | Enable or disable applying and releasing CR chart | `bool` | `true` | no |
