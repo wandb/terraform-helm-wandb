@@ -11,11 +11,16 @@ resource "helm_release" "operator" {
   disable_webhooks = true
   verify           = false
   // note: use count to enforce whether helm is used for release
-  count            = var.enable_helm_operator ? 1 : 0
+  count = var.enable_helm_operator ? 1 : 0
 
   set {
     name  = "image.tag"
     value = var.controller_image_tag
+  }
+
+  set {
+    name  = "image.repository"
+    value = var.controller_image_repository
   }
 }
 

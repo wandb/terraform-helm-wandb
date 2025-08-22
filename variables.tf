@@ -38,3 +38,9 @@ variable "enable_helm_wandb" {
   default     = true
   description = "Enable or disable applying and releasing CR chart"
 }
+
+variable "controller_image_repository" {
+  type        = string
+  default     = "wandb/controller"
+  description = "wandb/controller image repository"
+}
