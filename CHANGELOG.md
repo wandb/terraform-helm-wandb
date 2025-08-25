@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.0.0](https://github.com/wandb/terraform-helm-wandb/compare/v3.0.0...v4.0.0) (2025-08-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* add helm chart toggles
+
+### Features
+
+* add helm chart toggles ([bf5cef5](https://github.com/wandb/terraform-helm-wandb/commit/bf5cef53e08dec84abf38c2dde7fa4626dea89b7))
+* Expose container images ([95ed5c6](https://github.com/wandb/terraform-helm-wandb/commit/95ed5c6fcff4c459eebab9d65451cff144666840))
+
 ## [3.0.0](https://github.com/wandb/terraform-helm-wandb/compare/v2.0.0...v3.0.0) (2025-03-11)
 
 
