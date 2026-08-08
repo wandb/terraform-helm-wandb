@@ -13,15 +13,15 @@ resource "helm_release" "operator" {
   // note: use count to enforce whether helm is used for release
   count = var.enable_helm_operator ? 1 : 0
 
-  set {
+  set = [{
     name  = "image.tag"
     value = var.controller_image_tag
-  }
+  },
 
-  set {
+{
     name  = "image.repository"
     value = var.controller_image_repository
-  }
+  }]
 }
 
 resource "helm_release" "wandb" {
@@ -38,16 +38,16 @@ resource "helm_release" "wandb" {
   create_namespace = true
   wait             = true
 
-  set {
+  set = [{
     name  = "name"
     value = "wandb"
-  }
+  },
 
-  set {
+  {
     name  = "spec"
     value = yamlencode(var.spec)
     type  = "string"
-  }
+  }]
 
   depends_on = [local.helm_release_operator]
 }
