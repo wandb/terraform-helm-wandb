@@ -16,11 +16,11 @@ resource "helm_release" "operator" {
   set = [{
     name  = "image.tag"
     value = var.controller_image_tag
-  },
+    },
 
-{
-    name  = "image.repository"
-    value = var.controller_image_repository
+    {
+      name  = "image.repository"
+      value = var.controller_image_repository
   }]
 }
 
@@ -41,12 +41,12 @@ resource "helm_release" "wandb" {
   set = [{
     name  = "name"
     value = "wandb"
-  },
+    },
 
-  {
-    name  = "spec"
-    value = yamlencode(var.spec)
-    type  = "string"
+    {
+      name  = "spec"
+      value = yamlencode(var.spec)
+      type  = "string"
   }]
 
   depends_on = [local.helm_release_operator]
